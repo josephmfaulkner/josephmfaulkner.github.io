@@ -2,6 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -37,8 +38,7 @@ module.exports = {
         filename: "pages/[name]/[hash].css",
         chunkFilename: "[id].css"
       }),
-      new CleanWebpackPlugin(['pages']),
-      
+      new CleanWebpackPlugin(['pages']),  
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         chunks: ['app','common'],
@@ -48,8 +48,12 @@ module.exports = {
         template: 'src/pages/snowflakes/index.html',
         chunks: ['snowflakes','common'],
         filename: 'pages/snowflakes/index.html'
+      }),
+      new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: false,
+        cacheId: 'JF-site',
       })
-
   ],
   optimization: {
     minimize: false
