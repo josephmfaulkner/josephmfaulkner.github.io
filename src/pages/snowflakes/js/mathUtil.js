@@ -5,6 +5,17 @@ let getMidPoint = function(point1, point2)
     return {x:nX,y:nY}; 
 }
 
+let getMidPointPercentage = function(point1, point2, percentage)
+{
+    let deltaX = point2.x - point1.x;
+    let deltaY = point2.y - point1.y;
+
+    let nX = point1.x + (deltaX * percentage);
+    let nY = point1.y + (deltaY * percentage);
+    
+    return {x:nX,y:nY}; 
+}
+
 let getVectorFromPoints = function(point1,point2)
 {
     let vX = point2.x - point1.x;
@@ -75,4 +86,4 @@ let getPerpendicularVector = function(vector)
 
 
 
-export { getMidPoint, getVectorFromPoints, getVectorMagnitude, scaleVector, normalizeVector, getPointFromVector , getPointInCircle, getTranslatePoint, getPerpendicularVector };
+export { getMidPoint, getMidPointPercentage, getVectorFromPoints, getVectorMagnitude, scaleVector, normalizeVector, getPointFromVector , getPointInCircle, getTranslatePoint, getPerpendicularVector };

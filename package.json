@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx webpack-dev-server --hot --content-base ./ --inline",
     "build": "npx webpack -p",
-    "serve": "http-server ./",
+    "serve": "http-server ./ --port 8001",
     "test": "jest"
   },
   "repository": {

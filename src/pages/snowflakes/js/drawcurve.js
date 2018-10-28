@@ -19,11 +19,11 @@ let getPerpendicularPoint = function(point1,point2,angle)
 }
 
 
-let getKochCurveSubPoints = function(point1, point2, angle)
+let getKochCurveSubPoints = function(point1, point2, angle, pinchFactor)
 {
     let midPoint   = MathUtil.getMidPoint(point1,point2);
-    let midPoint1  = MathUtil.getMidPoint(point1,midPoint);
-    let midPoint2  = MathUtil.getMidPoint(midPoint,point2);
+    let midPoint1  = MathUtil.getMidPointPercentage(point1,midPoint,pinchFactor);
+    let midPoint2  = MathUtil.getMidPointPercentage(point2,midPoint,pinchFactor);
 
     let perpendicularPoint = getPerpendicularPoint(point1, point2, angle); 
 
@@ -35,7 +35,7 @@ let getKochCurveSubPoints = function(point1, point2, angle)
 
 }
 
-let drawCurveRecursive = function(context, point1, point2, angle, depth)
+let drawCurveRecursive = function(context, point1, point2, angle, pinchFactor, depth)
 {
     if(depth <= 0)
     {
@@ -43,12 +43,12 @@ let drawCurveRecursive = function(context, point1, point2, angle, depth)
         return; 
     }
     
-    let subpoints = getKochCurveSubPoints(point1,point2,angle);
+    let subpoints = getKochCurveSubPoints(point1,point2,angle, pinchFactor);
 
-    drawCurveRecursive(context, point1                      , subpoints.midPoint1         , angle, depth - 1);
-    drawCurveRecursive(context, subpoints.midPoint1         , subpoints.perpendicularPoint, angle, depth - 1);
-    drawCurveRecursive(context, subpoints.perpendicularPoint, subpoints.midPoint2         , angle, depth - 1);
-    drawCurveRecursive(context, subpoints.midPoint2         , point2                      , angle, depth - 1);
+    drawCurveRecursive(context, point1                      , subpoints.midPoint1         , angle, pinchFactor, depth - 1);
+    drawCurveRecursive(context, subpoints.midPoint1         , subpoints.perpendicularPoint, angle, pinchFactor, depth - 1);
+    drawCurveRecursive(context, subpoints.perpendicularPoint, subpoints.midPoint2         , angle, pinchFactor, depth - 1);
+    drawCurveRecursive(context, subpoints.midPoint2         , point2                      , angle, pinchFactor, depth - 1);
 
 }
 
@@ -68,7 +68,7 @@ let drawSnowFlake = function(context, size, numberOfSides,angle,pinchFactor,dept
     {
         theta = (thetaDelta * i);
         let nextPoint = MathUtil.getPointInCircle(theta,size);
-        drawCurveRecursive(context, MathUtil.getTranslatePoint(prevPoint,centerX,centerY), MathUtil.getTranslatePoint(nextPoint,centerX,centerY), angle, depth);
+        drawCurveRecursive(context, MathUtil.getTranslatePoint(prevPoint,centerX,centerY), MathUtil.getTranslatePoint(nextPoint,centerX,centerY), angle, pinchFactor, depth);
         prevPoint = nextPoint; 
     }
     
