@@ -1,44 +1,45 @@
-<!doctype html>
+<!--DOCTYPE html -->
 <html>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <head>
-   <title>SnowFlakes</title>
-   <link rel="icon" href="/favicon.ico">
- <link href="../../pages/common/4fccedd01c708435fc5d.css" rel="stylesheet"><link href="../../pages/snowflakes/4fccedd01c708435fc5d.css" rel="stylesheet"></head>
- <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Joseph Faulkner</title>
+        <link rel="icon" href="/favicon.png">
+        <link rel="manifest" href="/manifest.json">
+    <link href="../../pages/common/1199559f443ce08d34f6.css" rel="stylesheet"><link href="../../pages/snowflakes/1199559f443ce08d34f6.css" rel="stylesheet"></head>
+    <body>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet> <ul id=dropdown-main class=dropdown-content> <li><a href=/pages/snowflakes/ >Snowflakes</a></li> </ul> <div class=navbar> <nav class=nav-extended> <div class=nav-wrapper> <a href=/ class="brand-logo right">JF</a> <a href=# data-target=mobile-demo class=sidenav-trigger><i class=material-icons>menu</i></a> <ul id=nav-mobile class="left hide-on-med-and-down"> <li><a href=/ >Home</a></li> <li><a class=dropdown-trigger href=#! data-target=dropdown-main>Playground<i class="material-icons right">arrow_drop_down</i></a></li> </ul> </div> </nav> </div> <ul class=sidenav id=mobile-demo> <li><a href=/ >Home</a></li> <li><div class=divider></div></li> <li><a class=dropdown-trigger href=#! data-target=dropdown-sidenav>Playground<i class="material-icons right">arrow_drop_down</i></a></li> <ul id=dropdown-sidenav class=dropdown-content> <li><a href=/pages/snowflakes/ >Snowflakes</a></li> </ul> </ul> <script>document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".dropdown-trigger");M.Dropdown.init(e,{})}),document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".sidenav");M.Sidenav.init(e,{})})</script>
-     <div id="app">
-      <div class="appContainer">
-        <div class="row">
-          <div class="col l6 sm12" id="canvasContainer">
-            <canvas id="mainView" width="500" height="500"></canvas>
-          </div>
-          <div class="col l6 sm12 controls" id="controlsContainer">
-              <form action="#"></form>
-                <p class="range-field">
-                  <label for="inputSize">Size</label>
-                  <input type="range" min="3" max="500" value="156" id="inputSize">
-                </p>
-                <p class="range-field">
-                  <label for="inputNumSides">Sides</label>
-                  <input type="range" min="3" max="10"  value="3" id="inputNumSides">
-                </p>
-                <p class="range-field">
-                  <label for="inputAngle">θ °</label>
-                  <input type="range" min="-60" max="60"  value="-40" id="inputAngle">
-                </p>
-                <p class="range-field">
-                  <label for="inputPinchFactor">Δ</label>
-                  <input type="range" min="1" max="100" value="50" id="inputPinchFactor">
-                </p>
-                <p class="range-field">
-                  <label for="inputDepth">Depth</label>
-                  <input type="range" min="0" max="6"   value="3" id="inputDepth">
-                </p>
-              </form>
-            </div>
-        </div>
+  <div id="app">
+  <div class="appContainer">
+    <div class="row">
+      <div class="col l6 sm12" id="canvasContainer">
+        <canvas id="mainView" width="500" height="500"></canvas>
       </div>
-     </div>
- <script type="text/javascript" src="../../pages/common/4fccedd01c708435fc5d.bundle.js"></script><script type="text/javascript" src="../../pages/snowflakes/4fccedd01c708435fc5d.bundle.js"></script></body>
+      <div class="col l6 sm12 controls" id="controlsContainer">
+          <form action="#"></form>
+            <p class="range-field">
+              <label for="inputSize">Size</label>
+              <input type="range" min="3" max="500" value="156" id="inputSize">
+            </p>
+            <p class="range-field">
+              <label for="inputNumSides">Sides</label>
+              <input type="range" min="3" max="10"  value="3" id="inputNumSides">
+            </p>
+            <p class="range-field">
+              <label for="inputAngle">θ °</label>
+              <input type="range" min="-60" max="60"  value="-40" id="inputAngle">
+            </p>
+            <p class="range-field">
+              <label for="inputPinchFactor">Δ</label>
+              <input type="range" min="1" max="100" value="50" id="inputPinchFactor">
+            </p>
+            <p class="range-field">
+              <label for="inputDepth">Depth</label>
+              <input type="range" min="0" max="6"   value="3" id="inputDepth">
+            </p>
+          </form>
+        </div>
+    </div>
+  </div>
+  </div>
+<script type="text/javascript" src="../../pages/common/1199559f443ce08d34f6.bundle.js"></script><script type="text/javascript" src="../../pages/snowflakes/1199559f443ce08d34f6.bundle.js"></script></body>
 </html>

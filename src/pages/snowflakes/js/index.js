@@ -4,23 +4,9 @@ import drawSnowFlake from './drawcurve';
 
 console.log("Hello from the console");
 
-var canvas = document.getElementById("mainView");
-var canvasContext = canvas.getContext("2d");
-
-var inputSize        = document.getElementById("inputSize");
-var inputNumSides    = document.getElementById("inputNumSides");
-var inputAngle       = document.getElementById("inputAngle");
-var inputPinchFactor = document.getElementById("inputPinchFactor");
-var inputDepth       = document.getElementById("inputDepth");
-
-let appModel = {
-    context: canvasContext,
-    size: 100, 
-    numberOfSides: 10,
-    angle: 20,
-    pinchFactor: 0.5,
-    depth: 5
-};
+var canvas;
+var canvasContext;
+var appModel;
 
 let updateView = function(model)
 {
@@ -37,14 +23,6 @@ let onSliderChange = function(){
     updateView(appModel);
 }
 
-inputSize.oninput        = onSliderChange;         
-inputNumSides.oninput    = onSliderChange;
-inputAngle.oninput       = onSliderChange;
-inputPinchFactor.oninput = onSliderChange;
-inputDepth.oninput       = onSliderChange;
-
-onSliderChange(); 
-
 function resizeCanvas() {
         let controlsContainer = document.getElementById("controlsContainer");
         let controlsWidth = controlsContainer.offsetWidth; 
@@ -58,8 +36,39 @@ function resizeCanvas() {
         updateView(appModel); 
 }
 
-window.addEventListener('resize', resizeCanvas, false);
-resizeCanvas();
 
+
+//init page
+(function() {
+
+    canvas = document.getElementById("mainView");
+    canvasContext = canvas.getContext("2d");
+
+    var inputSize        = document.getElementById("inputSize");
+    var inputNumSides    = document.getElementById("inputNumSides");
+    var inputAngle       = document.getElementById("inputAngle");
+    var inputPinchFactor = document.getElementById("inputPinchFactor");
+    var inputDepth       = document.getElementById("inputDepth");
+
+
+    inputSize.oninput        = onSliderChange;         
+    inputNumSides.oninput    = onSliderChange;
+    inputAngle.oninput       = onSliderChange;
+    inputPinchFactor.oninput = onSliderChange;
+    inputDepth.oninput       = onSliderChange;
+
+    appModel = {
+        context: canvasContext,
+        size: 100, 
+        numberOfSides: 10,
+        angle: 20,
+        pinchFactor: 0.5,
+        depth: 5
+    };
+
+    window.addEventListener('resize', resizeCanvas, false);
+    onSliderChange();
+    resizeCanvas();
+ })();
 
 
