@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <head>
+   <title>Learn Dammit</title>
+ </head>
+ <body>
+    <%= require('html-loader!../../partials/menu.html') %>
+     <div id="app">
+      <div class="appContainer">
+        <div class="row">
+          <div class="col l6 sm12" id="canvasContainer">
+            <canvas id="mainView" width="500" height="500"></canvas>
+          </div>
+          <div class="col l6 sm12 controls" id="controlsContainer">
+              <form action="#"></form>
+                <p class="range-field">
+                  <label for="inputSize">Size</label>
+                  <input type="range" min="3" max="500" value="156" id="inputSize">
+                </p>
+                <p class="range-field">
+                  <label for="inputNumSides">Sides</label>
+                  <input type="range" min="3" max="10"  value="3" id="inputNumSides">
+                </p>
+                <p class="range-field">
+                  <label for="inputAngle">θ °</label>
+                  <input type="range" min="-60" max="60"  value="-40" id="inputAngle">
+                </p>
+                <p class="range-field">
+                  <label for="inputPinchFactor">Δ</label>
+                  <input type="range" min="1" max="100" value="50" id="inputPinchFactor">
+                </p>
+                <p class="range-field">
+                  <label for="inputDepth">Depth</label>
+                  <input type="range" min="0" max="6"   value="3" id="inputDepth">
+                </p>
+              </form>
+            </div>
+        </div>
+      </div>
+     </div>
+ </body>
+</html>

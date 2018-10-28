@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <head>
+   <title>Learn Dammit</title>
+ <link href="../../pages/common/6449365ab15f887d05f9.css" rel="stylesheet"><link href="../../pages/snowflakes/6449365ab15f887d05f9.css" rel="stylesheet"></head>
+ <body>
+    <div id=site-menu> <ul id=dropdown1 class=dropdown-content> <li><a href=/ >Home</a></li> <li><a href=/pages/snowflakes>Snowflakes</a></li> </ul> <nav> <div class=nav-wrapper> <a href=#! class=brand-logo>Logo</a> <ul class="right hide-on-med-and-down"> <li><a href=sass.html>Sass</a></li> <li><a href=badges.html>Components</a></li> <li><a class=dropdown-trigger href=#! data-target=dropdown1>Dropdown<i class="material-icons right"></i></a></li> </ul> </div> </nav> <script>document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".dropdown-trigger");M.Dropdown.init(e,{})})</script> </div>
+     <div id="app">
+      <div class="appContainer">
+        <div class="row">
+          <div class="col l6 sm12" id="canvasContainer">
+            <canvas id="mainView" width="500" height="500"></canvas>
+          </div>
+          <div class="col l6 sm12 controls" id="controlsContainer">
+              <form action="#"></form>
+                <p class="range-field">
+                  <label for="inputSize">Size</label>
+                  <input type="range" min="3" max="500" value="156" id="inputSize">
+                </p>
+                <p class="range-field">
+                  <label for="inputNumSides">Sides</label>
+                  <input type="range" min="3" max="10"  value="3" id="inputNumSides">
+                </p>
+                <p class="range-field">
+                  <label for="inputAngle">θ °</label>
+                  <input type="range" min="-60" max="60"  value="-40" id="inputAngle">
+                </p>
+                <p class="range-field">
+                  <label for="inputPinchFactor">Δ</label>
+                  <input type="range" min="1" max="100" value="50" id="inputPinchFactor">
+                </p>
+                <p class="range-field">
+                  <label for="inputDepth">Depth</label>
+                  <input type="range" min="0" max="6"   value="3" id="inputDepth">
+                </p>
+              </form>
+            </div>
+        </div>
+      </div>
+     </div>
+ <script type="text/javascript" src="../../pages/common/6449365ab15f887d05f9.bundle.js"></script><script type="text/javascript" src="../../pages/snowflakes/6449365ab15f887d05f9.bundle.js"></script></body>
+</html>
